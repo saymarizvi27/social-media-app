@@ -7,7 +7,7 @@ interface ProfileParentType {
 }
 
 export const Profile = {
-    user : async ({ id , bio , createAt , updatedAt , userId }:any , __:any , {prisma }: Context ) => {
+    user : async ({ id , bio , userId }:ProfileParentType , __:any , {prisma }: Context ) => {
         const user = await prisma.user.findUnique({
             where : {
                 id : userId
